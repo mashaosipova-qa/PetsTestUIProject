@@ -1,5 +1,4 @@
 import pytest
-from pages.profile_page import ProfilePage
 from data.test_data import PET_DATA, URLS, PET_TYPES
 from pages.pet_new_page import PetNewPage
 from pages.pet_edit_page import PetEditPage
@@ -28,8 +27,8 @@ def test_add_new_pet(profile_page, browser):
     current_pet_count = profile_page.get_pets_count()
     print(f'Количество питомцев после прохождения теста: {current_pet_count}')
 
-    assert current_pet_count == initial_pets_count + 1, (f"Ожидалось питомцев: {initial_pets_count + 1}, "f"но на странице сейчас: {current_pet_count}")
-    assert profile_page.is_new_pet_displayed(pet_name), (f"Питомец с именем '{pet_name}' не отображается в профиле")
+    assert current_pet_count == initial_pets_count + 1, f"Ожидалось питомцев: {initial_pets_count + 1}, "f"но на странице сейчас: {current_pet_count}"
+    assert profile_page.is_new_pet_displayed(pet_name), f"Питомец с именем '{pet_name}' не отображается в профиле"
 
 # 2. Проверка добавления нового питомца pet2 c заполнением обязательных и необязательных полей на странице pet_new_page
 @pytest.mark.regression
@@ -58,8 +57,8 @@ def test_add_new_pet_with_optional_fields(profile_page, browser):
     current_pet_count = profile_page.get_pets_count()
     print(f'Количество питомцев после прохождения теста: {current_pet_count}')
 
-    assert current_pet_count == initial_pets_count + 1, (f"Ожидалось питомцев: {initial_pets_count + 1}, "f"но на странице сейчас: {current_pet_count}")
-    assert profile_page.is_new_pet_displayed(pet_name), (f"Питомец с именем '{pet_name}' не отображается в профиле")
+    assert current_pet_count == initial_pets_count + 1, f"Ожидалось питомцев: {initial_pets_count + 1}, "f"но на странице сейчас: {current_pet_count}"
+    assert profile_page.is_new_pet_displayed(pet_name), f"Питомец с именем '{pet_name}' не отображается в профиле"
 
 # 3. Проверка сохранения данных при отмене(кнопка Cancel)
 @pytest.mark.smoke
@@ -83,7 +82,7 @@ def test_add_new_pet_with_cancel(profile_page, browser):
     current_pet_count = profile_page.get_pets_count()
     print(f'Количество питомцев после прохождения теста: {current_pet_count}')
 
-    assert current_pet_count == initial_pets_count, (f"Ожидалось питомцев: {initial_pets_count}, "f"но на странице сейчас: {current_pet_count}")
+    assert current_pet_count == initial_pets_count, f"Ожидалось питомцев: {initial_pets_count}, "f"но на странице сейчас: {current_pet_count}"
 
 
 # 4. Редактирование категории питомца (с cat на hamster)
@@ -112,7 +111,7 @@ def test_delete_pet(browser, profile_page, created_pet):
     profile_page.confirm_delete_pet(pet_name)
     browser.refresh()
     time.sleep(5)
-    assert profile_page.is_pet_not_displayed(pet_name), (f"Питомец с именем '{pet_name}' отображается в профиле")
+    assert profile_page.is_pet_not_displayed(pet_name), f"Питомец с именем '{pet_name}' отображается в профиле"
 
 
 
