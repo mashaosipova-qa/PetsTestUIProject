@@ -87,7 +87,7 @@ def test_add_new_pet_with_cancel(profile_page, browser):
 
 
 # 4. Редактирование категории питомца (с cat на hamster)
-# @pytest.mark.smoke
+@pytest.mark.smoke
 def test_edit_pet_type_cat_to_hamster(browser, profile_page, created_pet):
     pet_name = created_pet["name"] # cоздание питомца через фикстуру created_pet
     time.sleep(3)
@@ -102,7 +102,7 @@ def test_edit_pet_type_cat_to_hamster(browser, profile_page, created_pet):
     assert profile_page.get_pet_type(pet_name) == PET_TYPES['hamster']
 
 # 5. Удаление элемента из списка
-# @pytest.mark.smoke
+@pytest.mark.smoke
 def test_delete_pet(browser, profile_page, created_pet):
     pet_name = created_pet["name"] # cоздание питомца через фикстуру created_pet
     time.sleep(3)
