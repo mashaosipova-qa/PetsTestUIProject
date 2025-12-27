@@ -1,6 +1,6 @@
 LOGIN_DATA = {
-    'valid_email': 'test2025@yahoo.com',
-    'valid_password': 'Qa1234!',
+    'valid_email': '[enter_email]',
+    'valid_password': '[enter_password]',
     'invalid_email': 'wrong@test.com',
     'invalid_password': 'wrongpass'
 }
