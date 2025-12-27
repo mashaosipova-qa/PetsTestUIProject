@@ -30,12 +30,12 @@ class ProfilePageLocators:
     EDIT_BUTTON = (By.XPATH, ".//button[contains(@aria-label,'Edit')]")
     CONFIRM_DELETE_LOCATOR = (By.CSS_SELECTOR, "body > div.p-confirm-popup.p-component.p-ripple-disabled > div.p-confirm-popup-footer > button.p-button.p-component.p-confirm-popup-accept.p-button-sm")
     NEW_PET_XPATH = "//*[normalize-space(text())='{pet_name}']"
-    PET_EDIT_BUTTON_XPATH = ("//button[@aria-label='Edit' and " "ancestor::div[contains(@class, 'product-list-item')]" "[.//div[contains(@class, 'product-name') and contains(., '{pet_name}')]]]")
+    PET_EDIT_BUTTON_XPATH = "//button[@aria-label='Edit' and " "ancestor::div[contains(@class, 'product-list-item')]" "[.//div[contains(@class, 'product-name') and contains(., '{pet_name}')]]]"
     PET_BY_NAME_XPATH = "//*[normalize-space(text())='{pet_name}']"
     PET_CARD_BY_PET_ELEMENT = "./ancestor::div[contains(@class, 'product-list-detail')][1]"
-    PET_TYPE_IN_CARD_XPATH = (".//*[contains(text(), 'cat') or contains(text(), 'hamster') or " "contains(text(), 'dog') or contains(text(), 'reptile') or " "contains(text(), 'parrot')]")
-    PET_DELETE_BUTTON_XPATH = ("//button[@aria-label='Delete' and " "ancestor::div[contains(@class, 'product-list-item')]" "[.//div[contains(@class, 'product-name') and contains(., '{pet_name}')]]]")
-    PET_BY_NAME_XPATH = "//*[normalize-space(text())='{pet_name}']"
+    PET_TYPE_IN_CARD_XPATH = ".//*[contains(text(), 'cat') or contains(text(), 'hamster') or " "contains(text(), 'dog') or contains(text(), 'reptile') or " "contains(text(), 'parrot')]"
+    PET_DELETE_BUTTON_XPATH = "//button[@aria-label='Delete' and " "ancestor::div[contains(@class, 'product-list-item')]" "[.//div[contains(@class, 'product-name') and contains(., '{pet_name}')]]]"
+
 
 class PetNewPageLocators:
     PET_NAME_INPUT = (By.ID, "name")
