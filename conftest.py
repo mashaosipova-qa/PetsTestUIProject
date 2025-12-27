@@ -9,7 +9,7 @@ from pages.pet_new_page import PetNewPage
 from pages.main_page import MainPage
 from data.test_data import LOGIN_DATA, URLS, PET_DATA
 
-#открывает и закрывает браузер для каждого теста
+# Открывает и закрывает браузер для каждого теста
 @pytest.fixture(scope="function")
 def browser():
     # отключение pop_up о сохранении/смены пароля
@@ -23,18 +23,18 @@ def browser():
     options.add_argument("--disable-features=PasswordLeakDetection")
     options.add_argument("--password-store=basic")
 
-    # Важные флаги для менеджера паролей
+    # Флаги для менеджера паролей
     options.add_argument("--disable-save-password-bubble")
     options.add_argument("--disable-features=AutofillServerCommunication,PasswordManagerOnboarding")
     options.add_argument("--password-store=basic")
 
     driver = webdriver.Chrome(options=options)
-    # разворачивает окно браузера на весь экран, чтобы все элементы страницы были видны о время теста
+    # разворачивает окно браузера на весь экран, чтобы все элементы страницы были видны во время теста
     driver.maximize_window()
     yield driver
     driver.quit()
 
-#Залогиненный пользователь
+# Авторизация пользователя
 @pytest.fixture(scope="function")
 def logged_user(browser):
     page = LoginPage(browser)
@@ -82,3 +82,8 @@ def main_page(logged_user):
     logged_user.get(URLS['main_page'])
     return MainPage(logged_user, URLS['main_page'])
 
+@pytest.fixture(scope="function")
+def login_page(browser):
+    page = LoginPage(browser)
+    page.open()  # если в LoginPage есть метод open() с URL логина
+    return page

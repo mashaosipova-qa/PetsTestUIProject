@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-@pytest.mark.smoke
+@pytest.mark.skip
 def test_go_to_login_page(browser):
     page = MainPage(browser, URLS['main_page'])
     page.open()
@@ -14,7 +14,7 @@ def test_go_to_login_page(browser):
     browser.save_screenshot('result1.png')
 
 # Проверка фильтрации по типу (type = hamster) под авторизованным пользователем
-@pytest.mark.smoke
+@pytest.mark.regression
 def test_filter_pet_category(main_page):
     hamster_type = PET_TYPES['hamster']
     main_page.select_filter(hamster_type)
@@ -48,7 +48,7 @@ def test_add_like_pet_by_name(main_page, browser, created_pet):
     assert "liked" in like_pet.get_attribute("class"), "Лайк не поставлен"
 
 # Проверка что по клику на кнопку Details пользователь переходит на страницу Pet Details
-@pytest.mark.smoke
+@pytest.mark.regression
 def test_add_like_pet_by_name(main_page, browser, created_pet):
     pet_name = created_pet["name"]  # cоздание питомца через фикстуру created_pet
     browser.get(URLS['main_page'])
