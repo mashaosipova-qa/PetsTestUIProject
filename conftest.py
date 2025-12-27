@@ -45,7 +45,6 @@ def logged_user(browser):
 
 @pytest.fixture(scope="function")
 def profile_page(logged_user):
-    """Страница профиля для уже авторизованного пользователя."""
     page = ProfilePage(logged_user)   # logged_user == браузер после логина
     page.open()                       # открываем URL профиля
     return page
