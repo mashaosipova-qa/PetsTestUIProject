@@ -14,7 +14,7 @@
 
 ### Запуск тестов по маркерам:
 `python -m pytest -m "smoke or regression" -v` – запуск всех тестов с маркерами *smoke* или *regression* в расширенном (`-v`) формате вывода  
-`python -m pytest -v -s -m smoke` – запуск только *smoke*‑тестов с подробным выводом (`-v`) и показом вывода `print` (`-s`)
+`python -m pytest -v -s -m smoke` – запуск только *smoke*‑тестов с подробным выводом (`-v`) и показом вывода `print` (`-s`)  
 `python -m pytest -v -s -m regression` – запуск только *regression*‑тестов с подробным выводом и показом вывода `print`(`-s`)
 
 #### Тесты страницы профиля (test_profile_page.py)
