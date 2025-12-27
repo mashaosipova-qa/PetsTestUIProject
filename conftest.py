@@ -86,3 +86,4 @@ def login_page(browser):
     page = LoginPage(browser)
     page.open()  # если в LoginPage есть метод open() с URL логина
     return page
+
