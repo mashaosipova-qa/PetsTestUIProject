@@ -49,7 +49,7 @@ def test_add_like_pet_by_name(main_page, browser, created_pet):
 
 # Проверка что по клику на кнопку Details пользователь переходит на страницу Pet Details
 @pytest.mark.regression
-def test_add_like_pet_by_name(main_page, browser, created_pet):
+def test_open_pet_details(main_page, browser, created_pet):
     pet_name = created_pet["name"]  # cоздание питомца через фикстуру created_pet
     browser.get(URLS['main_page'])
     main_page.filter_by_pet_name(pet_name)
@@ -59,7 +59,7 @@ def test_add_like_pet_by_name(main_page, browser, created_pet):
     browser.save_screenshot('details.png')
 
 # Проверка, что по клику на кнопку Quit происходит перенаправление на страницу логина
-@pytest.mark.smoke
+@pytest.mark.regression
 def test_quit_redirects_to_login(browser, logged_user, main_page):
     browser.get(URLS["main_page"])
     main_page.click_quit()
