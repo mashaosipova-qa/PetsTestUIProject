@@ -14,10 +14,6 @@ class MainPageLocators:
     DETAILS_BUTTON = (By.CSS_SELECTOR, "button[aria-label='Details']")
     NEXT_PAGE_BUTTON = (By.CSS_SELECTOR, "button.p-paginator-next")
     PAGINATOR_PAGES_CONTAINER = (By.CSS_SELECTOR, "span.p-paginator-pages")
-    #Динамический локатор
-    # @staticmethod
-    # def pet_card_by_name(name: str):
-    #     return (By.XPATH, f"//div[contains(@class,'product-grid-item') and contains(@class,'card')]" f"//div[contains(@class,'product-name') and text()='{name}']")
 
 class LoginPageLocators:
     LOGIN_EMAIL = (By.ID, "login")
